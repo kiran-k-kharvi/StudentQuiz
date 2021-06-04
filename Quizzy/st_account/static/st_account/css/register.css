@@ -1,0 +1,25 @@
+body
+{
+    background-image: url(../img/bgRegi.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+#inputEmail,#inputUserName,#inputPassword1,#inputPassword2
+{
+    margin-bottom: 10px;
+}
+
+.jumbo
+{   opacity: 95%;
+    background-color: rebeccapurple;    
+    margin-top: 20px;
+}
+#reg_form_h3
+{
+    color:goldenrod;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}

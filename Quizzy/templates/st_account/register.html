@@ -1,0 +1,75 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block head_link %}
+<link rel="stylesheet" href="{% static 'st_account\css\register.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Register</title>
+{% endblock %}
+
+
+
+
+{% block nav_link %}
+<li class="nav-item ">
+  <a class="nav-link my_active" href="{% url 'register' %}">Register</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+{% endblock %} 
+
+
+{% block body %}
+
+
+<div class="row">
+  <div class="col-sm-3 col-xl-4 col-2"></div>
+                    <div class="jumbotron jumbo col-xl-4 col-sm-6 col-9 row" > 
+                        <div class="col-1"></div>
+                        <div class=" col-10">
+                        <h3 id="reg_form_h3" class="col-lg-12 text-center" >Registration Form</h3>
+                        <form method="POST" enctype="multipart/form-data">
+                          {% csrf_token %}
+                        <div class="form-group">
+                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email address " required autofocus>
+                        <input type="text" name="username" class="form-control" id="inputUserName" placeholder="user Name" required>
+                        <input type="password" name="password1" class="form-control" id="inputPassword1" placeholder="password" required>
+                        <input type="password" name="password2" class="form-control" id="inputPassword2" placeholder="verify password" required>
+                        </div>
+                                  <div class="row col-12" >
+                                          {% for field in register_form %}
+                                              {% for error in field.errors%}
+                                                <p style="color: red;font-weight: 500;" >{{error}}</p>
+                                              {% endfor %}
+                                          {% endfor %}
+                                  </div>
+                                    
+                                 <div class="row col-12">
+                                    <div class="col-6 ">
+                                        <button type="button" class="btn btn-primary" id="login_btn" style="float: right;">Login</button>
+                                    </div>
+                                    <div class="col-6">
+                                    <button type="submit" class="btn btn-primary" id="submit_btn" style="float: left;">Register</button>
+                                    </div>
+                                 </div>
+                        </div>
+                    <div class=" col-1"></div>
+                  </div>
+
+  <div class="col-sm-3 col-xl-4 col-1"></div>
+
+    </div>
+
+
+{% endblock %}
+
+
+
+
+{% block js_script %}
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block head_link %}
+<link rel="stylesheet" href="{% static 'st_account\css\login.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+
+
+
+
+{% block nav_link %}
+<li class="nav-item ">
+  <a class="nav-link " href="{% url 'register' %}">Register</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link my_active" href="{% url 'login' %}">Login</a>
+</li>
+{% endblock %} 
+
+
+
+{% block body %}
+
+{% endblock %}
+
+
+
+{% block js_script %}
+
+{% endblock %}

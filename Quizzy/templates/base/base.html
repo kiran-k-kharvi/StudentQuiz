@@ -1,0 +1,105 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/TitleLogo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href="../../static/bootstrap/bootstrap.min.css.map"> -->
+    <link rel="stylesheet" href="{% static 'Font-Awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+
+{% block title %}
+    <title>Base</title>
+{% endblock %}
+
+{% block head_link %}
+{% endblock %}
+</head>
+
+
+<body>
+<div class="body_div">
+  <div class="body_content">
+<nav  class="navbar navbar-expand-md navbar-light  fixed-top" id="my_nav">
+    <a class="navbar-brand" href="#">Quizzy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+{% block nav_link %}
+        <li class="nav-item ">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+{% endblock %}    
+      </ul>
+    </div>
+  </nav>
+
+{% block body %}
+{% endblock %}
+</div>
+<footer class=" my_footer pt-4 " >
+    <div class="container text-center text-md-left ">
+      <div class="row ">
+
+        <div class="col-md-1 "></div>
+        <div class="col-md-5 col-6">
+          <h5 class="font-weight-bold text-uppercase mb-4 ft_h5"><u>About</u></h5>
+          <ul class="list-unstyled">
+            <li>
+              <p>
+                <a href="#!">My Resume</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="#!">Certificates</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-5 col-6 ">
+          <h5 class="font-weight-bold text-uppercase mb-4 ft_h5"><u>Address</u></h5>
+          <ul class="list-unstyled">
+            <li>
+              <p>
+                <i class="fa fa-home mr-3"></i> Bangalore,560029,India</p>
+            </li>
+            <li>
+              <p>
+                <i class="fa fa-envelope mr-3"></i> <a href="mailto:kirankharvi22@gmail.com">kirankharvi22@gmail.com</a></p>
+            </li>
+            <li>
+              <p>
+                <i class="fa fa-phone mr-3"></i><a href="tel:8618496998">8618496998</a></p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-1 "></div>
+      </div>
+    </div>
+</footer>
+</div>
+</body>
+
+<script src="{%static 'jquery/jquery-3.6.0.min.js' %}"></script>
+<!-- <script src="../../static/bootstrap/bootstrap.min.js.map"></script> -->
+<script src="{%static 'bootstrap/bootstrap.min.js' %}"></script>
+
+{% block js_script %}
+{% endblock %}
+
+
+</html>

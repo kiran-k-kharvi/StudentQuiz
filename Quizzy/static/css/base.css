@@ -1,0 +1,61 @@
+body
+{
+    margin-top: 56px;
+    position: relative;
+  min-height: 100vh;
+}
+.body_div
+{
+    position: relative;
+  min-height: 100vh;
+}
+
+.body_content
+{
+    padding-bottom: 13.5rem;
+}
+
+
+#my_nav a{
+color:lightpink;
+}
+
+#my_nav .my_active{
+    color: whitesmoke;
+    }
+
+#my_nav .navbar-brand
+{
+    font-weight: 600;
+    font-variant: all-small-caps;
+    color:lightpink;
+    font-family: cursive;
+
+
+}
+#my_nav
+{
+    background-color: blueviolet;
+}
+.my_footer
+{
+    color:lightsalmon ;
+    background-color: black;
+    font-size: 1.3vw;
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;  
+}
+
+
+
+.my_footer a{
+    color: salmon;
+
+}
+
+.ft_h5
+{
+    font-size: 1.4vw;
+}
