@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>Assessment</title>
+{% endblock %}
+
+{% block head_link %}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+
+
+{% if request.user.is_authenticated %}
+        <li class="nav-item ">
+         <a  class="nav-link"> Hello, {{request.user.username}}</a>
+          </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+{% else %}
+  {% block nav_link %}
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+  {% endblock %}
+{% endif %}
+     
+
+{% block body %}
+
+<div class="row">
+<div class="col-sm-3 col-xl-4 col-2"></div>
+<div class="jumbotron jumbo col-xl-4 col-sm-6 col-9 row" > 
+{{question_set.0}}
+<div class="col-sm-3 col-xl-4 col-1"></div>
+</div>
+
+{% endblock %}
+
+
+
+{% block js_script %}
+<script src="{%static 'js/test.js' %}"></script>
+{% endblock %}

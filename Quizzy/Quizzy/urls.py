@@ -20,7 +20,9 @@ from st_account import views
 
 urlpatterns = [
     path('',views.home,name="home"),
+    path('test/<id>/',views.test,name="test"),
     path('register/',views.register_user,name="register"),
     path('login/',views.login_user,name="login"),
+    path('logout/',views.logout_user,name="logout"),
     path('admin/', admin.site.urls),
 ]

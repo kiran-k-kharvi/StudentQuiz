@@ -16,7 +16,7 @@ body
 }
 
 
-#my_nav a{
+#my_nav a,p{
 color:lightpink;
 }
 
@@ -58,4 +58,9 @@ color:lightpink;
 .ft_h5
 {
     font-size: 1.4vw;
+}
+
+.reg_log_link
+{
+    margin-left: auto;
 }

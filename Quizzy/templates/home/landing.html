@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>QUIZZY</title>
+{% endblock %}
+
+{% block head_link %}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+
+
+{% if request.user.is_authenticated %}
+        <li class="nav-item ">
+         <a  class="nav-link"> Hello, {{request.user.username}}</a>
+          </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+{% else %}
+  {% block nav_link %}
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+  {% endblock %}
+{% endif %}
+     
+
+{% block body %}
+<div class="container card_container">
+  <div class="card-deck q_card">
+      <div class="card text-center">
+          <div class="card-block">
+              <img src="{% static 'quizzy_card_img/movie.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Movies</h5>
+                <a href="{% url 'test' id=11 %}" class="btn btn-primary test" >Take Test</a>
+            </div>
+          </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-block">
+            <img src="{% static 'quizzy_card_img/sports.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sports</h5>
+              <a href="{% url 'test' id=21 %}" class="btn btn-primary test"  >Take Test</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-block">
+          <img src="{% static 'quizzy_card_img/science.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Science</h5>
+            <a href="{% url 'test' id=18 %}" class="btn btn-primary test"  >Take Test</a>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block js_script %}
+<script src="{%static 'js/landing.js' %}"></script>
+{% endblock %}
