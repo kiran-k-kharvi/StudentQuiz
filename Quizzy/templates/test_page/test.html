@@ -7,7 +7,19 @@
 {% endblock %}
 
 {% block head_link %}
-<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+<style>
+    #question,#score
+{
+    color: blueviolet;
+    font-weight: 400;
+}
+
+.active
+{
+    background-color: lightseagreen;
+}
+</style>
 {% endblock %}
 
 
@@ -34,16 +46,50 @@
 {% block body %}
 
 <div class="row">
-<div class="col-sm-3 col-xl-4 col-2"></div>
-<div class="jumbotron jumbo col-xl-4 col-sm-6 col-9 row" > 
-{{question_set.0}}
-<div class="col-sm-3 col-xl-4 col-1"></div>
+<div class="col-sm-2 col-xl-4 col-2"></div>
+<div class="jumbotron jumbo col-xl-6 col-sm-6 col-9 row" > 
+        <p id="question" class="text-center w-100"></p>
+        <p id="score" class="text-center w-100 d-none"></p>
+<div class="container text-center" id="ans_block">
+    <div class="col-sm-1"></div>
+            <button type="button" id="0" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;">fhghjhiohohi</button>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+            <button type="button" id="1" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;"></button>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1"></div>
+            <button type="button" id="2" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;"></button>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1"></div>
+            <button type="button" id="3" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;"></button>
+            <div class="col-sm-1"></div>
+            <button type="button" id="next_btn" class="btn btn-primary col-3 text-center d-none" style="margin-bottom: 7px;">Next</button>
+
+  </div>
+
+
 </div>
+
+<div class="col-sm-2 col-xl-4 col-1"></div>
+</div>
+
 
 {% endblock %}
 
-
+<script>
+    var question_set = "{{question_set}}";
+</script>
 
 {% block js_script %}
 <script src="{%static 'js/test.js' %}"></script>
+<script>
+    var question_set = "{{question_set|escapejs}}";
+    question_set =JSON.parse(question_set);
+    var q_no = 1
+    var correct_ans_count =0
+    var correct_ans = question_set[q_no].correct_answer
+    var correct_ans_index = question_set[q_no].answers.indexOf(correct_ans)
+    var start = new Date().getTime();
+
+</script>
 {% endblock %}

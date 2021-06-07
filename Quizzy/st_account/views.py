@@ -1,4 +1,4 @@
-import requests
+import requests,json,random
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -60,7 +60,6 @@ def test(request,id):
     context={}
     url = "https://opentdb.com/api.php"
     get_question_set = requests.get(url,params={"amount":"10","category":id,"difficulty":"easy","type":"multiple"})
-    print(get_question_set.json()) 
     json_result = get_question_set.json()
     final_result = []
     for each in json_result['results']:
@@ -78,7 +77,11 @@ def test(request,id):
                     temp["correct_answer"] = v
                 if k == "question":
                     temp["question"] = v
+        random.shuffle(temp['answers'])
         final_result.append(temp)
+    final_result = json.dumps(final_result)
+    # print(final_result)
+    print(type(final_result))
     context["question_set"] = final_result
     return render(request,'test_page/test.html',context=context)
 
