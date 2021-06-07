@@ -9,10 +9,23 @@
 {% block head_link %}
 <link rel="stylesheet" href="{% static 'css/test.css' %}">
 <style>
-    #question,#score
+    #question
 {
-    color: blueviolet;
-    font-weight: 400;
+  color: darkblue;
+    font-size: 21px;
+    font-weight: 600;
+}
+#score
+{
+  color:black ;
+    font-weight: 700;
+    font-size: 21px;
+}
+#time_taken
+{
+  color:black ;
+    font-weight: 700;
+  font-size: 17px;
 }
 
 .active
@@ -46,13 +59,14 @@
 {% block body %}
 
 <div class="row">
-<div class="col-sm-2 col-xl-4 col-2"></div>
+<div class="col-sm-3 col-xl-3 col-2"></div>
 <div class="jumbotron jumbo col-xl-6 col-sm-6 col-9 row" > 
-        <p id="question" class="text-center w-100"></p>
         <p id="score" class="text-center w-100 d-none"></p>
+        <small id="time_taken" class="text-center w-100 d-none"></small>
+        <p id="question" class="text-center w-100"></p>
 <div class="container text-center" id="ans_block">
     <div class="col-sm-1"></div>
-            <button type="button" id="0" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;">fhghjhiohohi</button>
+            <button type="button" id="0" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;"></button>
     <div class="col-sm-1"></div>
     <div class="col-sm-1"></div>
             <button type="button" id="1" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;"></button>
@@ -63,14 +77,14 @@
             <div class="col-sm-1"></div>
             <button type="button" id="3" class="btn btn-light col-sm-8 col-12 text-center test" style="margin-bottom: 7px;"></button>
             <div class="col-sm-1"></div>
-            <button type="button" id="next_btn" class="btn btn-primary col-3 text-center d-none" style="margin-bottom: 7px;">Next</button>
+            <button type="button" id="next_btn" class="btn btn-primary col-3 text-center d-none" style="margin-top: 3px;">Next</button>
 
   </div>
 
 
 </div>
 
-<div class="col-sm-2 col-xl-4 col-1"></div>
+<div class="col-sm-3 col-xl-3 col-1"></div>
 </div>
 
 
@@ -85,11 +99,12 @@
 <script>
     var question_set = "{{question_set|escapejs}}";
     question_set =JSON.parse(question_set);
-    var q_no = 1
+    var q_no = 0
     var correct_ans_count =0
     var correct_ans = question_set[q_no].correct_answer
     var correct_ans_index = question_set[q_no].answers.indexOf(correct_ans)
     var start = new Date().getTime();
-
+    var total_question = question_set.length
+    
 </script>
 {% endblock %}
