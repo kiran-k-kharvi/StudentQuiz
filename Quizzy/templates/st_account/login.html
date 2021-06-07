@@ -49,10 +49,10 @@
                                             {% endfor %}
                                       </div>
                                    <div class="row col-12">
-                                      <div class="col-6 ">
-                                          <button type="button" class="btn btn-primary" id="login_btn" style="float: right;">Sign In</button>
+                                      <div class="col-7 ">
+                                          <button type="button" class="btn btn-primary" id="signin_btn" style="float: right;padding: 5px;">Sign In</button>
                                       </div>
-                                      <div class="col-6">
+                                      <div class="col-5">
                                       <button type="submit" class="btn btn-primary" id="submit_btn" style="float: left;">Login</button>
                                       </div>
                                    </div>
@@ -68,5 +68,10 @@
 
 
 {% block js_script %}
-
+<script>
+  $("#signin_btn").click(function()
+  {
+    window.location.replace("{% url 'register' %}")
+  })
+</script>
 {% endblock %}
