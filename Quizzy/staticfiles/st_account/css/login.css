@@ -1,0 +1,39 @@
+body
+{
+    background-image: url(../img/bg_login.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+#inputEmail
+{
+    margin-bottom: 10px;
+}
+
+#inputPassword
+{
+    margin-bottom: 15px;
+}
+
+.error
+{
+    margin-bottom: 10px;
+
+}
+
+#log_form_h3
+{
+    color:salmon;
+    font-weight:700;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.jumbo
+{   opacity: 95%;
+    background-color:darkslateblue;
+    margin-top: 20px;
+}
+
