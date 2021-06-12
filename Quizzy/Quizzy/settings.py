@@ -30,9 +30,9 @@ STATIC_DIR_Account = Path.joinpath(BASE_DIR,"st_account/static")
 SECRET_KEY = 'django-insecure-si_d-9k)ys8nv4nttur=#x54oh*)bc91t55npeffci*9(mt-bq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['kirankharvi.pythonanywhere.com']
+ALLOWED_HOSTS = ['kirankharvi.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
