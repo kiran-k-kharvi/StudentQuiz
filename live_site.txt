@@ -1,2 +1,1 @@
-http://kirankharvi.pythonanywhere.com/
-hi
+my_site_url = http://kirankharvi.pythonanywhere.com/
